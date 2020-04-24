@@ -33,13 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
         flexShrink: 0
       }
     },
-    appBar: {
-      marginLeft: drawerWidth,
-      backgroundColor: theme.palette.common.white,
-      [theme.breakpoints.up("sm")]: {
-        width: `calc(100% - ${drawerWidth}px)`
-      }
-    },
+
     menuButton: {
       marginRight: theme.spacing(2),
       [theme.breakpoints.up("sm")]: {
@@ -105,39 +99,8 @@ const ResponsiveDrawer = ({ history }: RouteComponentProps) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar action={handleDrawerToggle}></Toolbar>
-      </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper
-            }}
-            ModalProps={{
-              keepMounted: true // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper
-            }}
-            variant="permanent"
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
+      
     </div>
   );
 };

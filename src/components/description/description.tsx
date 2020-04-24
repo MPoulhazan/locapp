@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
       maxWidth: 360,
     },
+    labels: {
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center'
+      },
   }),
 );
 export interface DescriptionData{
@@ -26,12 +31,12 @@ interface DescriptionProps{
 }
 
 export default function Description(props:DescriptionProps) {
- 
+    const classes = useStyles();
 
   return (
-    <div  className="items">
+    <div  className="items" >
     
-    <List>
+    <List className={classes.labels}>
       {props.data.map(description => {
         return ( <ListItem>
           <ListItemAvatar>
