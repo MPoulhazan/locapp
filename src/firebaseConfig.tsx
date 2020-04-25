@@ -2,18 +2,19 @@
 import * as firebase from "firebase";
 
 export const config = {
-  apiKey: "AIzaSyAZvVWXK6ol1WYr1XKz9q8L16-QtdLlRmg",
-  authDomain: "jardin-facile.firebaseapp.com",
-  databaseURL: "https://jardin-facile.firebaseio.com",
-  projectId: "jardin-facile",
-  storageBucket: "",
-  messagingSenderId: "118814528060",
-  appId: "1:118814528060:web:0a051c17f39982d9"
+    apiKey: "AIzaSyCx_gWV2xxULZeA9WrSCzYi21xRTb7UMCk",
+    authDomain: "locapp-c4de3.firebaseapp.com",
+    databaseURL: "https://locapp-c4de3.firebaseio.com",
+    projectId: "locapp-c4de3",
+    storageBucket: "locapp-c4de3.appspot.com",
+    messagingSenderId: "212401663290",
+    appId: "1:212401663290:web:4680cca23dd90abb60f403",
+    measurementId: "G-1P8F0ZRMNC"
 };
 
 export default !firebase.apps.length
-  ? firebase.initializeApp(config)
-  : firebase.app();
+    ? firebase.initializeApp(config)
+    : firebase.app();
 
 export const google_provider = new firebase.auth.GoogleAuthProvider();
 export const facebook_provider = new firebase.auth.FacebookAuthProvider();
