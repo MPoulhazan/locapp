@@ -146,7 +146,6 @@ export default function PrimarySearchAppBar(props: toolBarProps) {
             onClose={handleMenuClose}
         >
             <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Mon compte</MenuItem>
             <MenuItem onClick={handleMenuClose}>Se décconnceter</MenuItem>
         </Menu>
     );

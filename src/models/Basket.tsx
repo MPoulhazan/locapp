@@ -1,10 +1,11 @@
-import { User } from "firebase";
 import { CollectCenter } from "./CollectCenter";
+import { User } from "./user";
 
 export interface Basket {
     id: number
     title: string;
     decription: string;
+    image?: string,
     seller: User,
     price: number,
     priceBeforeReduction?: number,

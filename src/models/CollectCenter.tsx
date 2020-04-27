@@ -5,7 +5,7 @@ export interface CollectCenter {
     name: string;
     description: string;
     owner: User;
-    openDate: string;
+    openDate: number;
     long: number;
     lat: number;
 }

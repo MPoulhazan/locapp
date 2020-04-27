@@ -13,8 +13,11 @@ import { theme } from "./theme";
 import { BrowserRouter } from "react-router-dom";
 import SimpleCard from "../src/components/cards/simpleCard/simpleCard";
 import AddButton from "../src/components/addButton/addButton";
+import basketService from "./shared/service/basket-service";
 
 const firebaseAppAuth = firebase.auth();
+
+// const service = basketService();
 
 const App = ({ user }: WrappedComponentProps) => (
 	<BrowserRouter>
