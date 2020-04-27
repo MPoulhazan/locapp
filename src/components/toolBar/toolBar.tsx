@@ -19,6 +19,9 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+// If you want to use the provided css
+import 'react-google-places-autocomplete/dist/index.min.css';
 
 export interface toolBarProps {
     action?: any;
@@ -210,6 +213,14 @@ export default function PrimarySearchAppBar(props: toolBarProps) {
                         }}
                         inputProps={{ "aria-label": "search" }}
                     />
+                        <GooglePlacesAutocomplete
+                            autocompletionRequest={{
+                                componentRestrictions: {
+                                  country: ['fr'],
+                                }
+                              }}
+                            onSelect={console.log}
+                            />
                 </div>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
