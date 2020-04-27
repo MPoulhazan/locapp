@@ -14,6 +14,7 @@ import { BrowserRouter } from "react-router-dom";
 import SimpleCard from "../src/components/cards/simpleCard/simpleCard";
 import AddButton from "../src/components/addButton/addButton";
 import basketService from "./shared/service/basket-service";
+import { Box } from "@material-ui/core";
 
 const firebaseAppAuth = firebase.auth();
 
@@ -27,9 +28,19 @@ const App = ({ user }: WrappedComponentProps) => (
 					<div>
 						<NavigationMenu />
 						<Main></Main>
-						<div id="conteneur">
-								<SimpleCard></SimpleCard>
-						</div>
+                        <Box display="flex" flexDirection="row" justifyContent="space-around" flexWrap="wrap">
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                            <SimpleCard></SimpleCard>
+                        </Box>
 						<AddButton></AddButton>
 					</div>
 				) : (

@@ -22,6 +22,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 // If you want to use the provided css
 import 'react-google-places-autocomplete/dist/index.min.css';
+import {Animated} from "react-animated-css";
 
 export interface toolBarProps {
     action?: any;
@@ -199,26 +200,33 @@ export default function PrimarySearchAppBar(props: toolBarProps) {
                     <MenuIcon />
                 </IconButton>
                 <Typography className={classes.title} variant="h6" noWrap>
-                    <span className={classes.titleBlue}>Trouvez</span> un producteur près de chez vous
+                <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+                    <span className={classes.titleBlue}>Trouvez</span>
+                </Animated> 
+                <Animated animationIn="fadeIn" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
+                un producteur près de chez vous
+                </Animated>
                 </Typography>
-                <div className={classes.search}>
-                    <div className={classes.searchIcon}>
-                        <SearchIcon />
-                    </div>
+                <Animated animationIn="fadeIn" animationOut="fadeOut" animationInDelay={2000} isVisible={true}>
+                    <div className={classes.search}>
+                        <div className={classes.searchIcon}>
+                            <SearchIcon />
+                        </div>
 
-                        <GooglePlacesAutocomplete
-                            autocompletionRequest={{
-                                componentRestrictions: {
-                                    country: ['fr'],
-                                }
-                            }}
-                            onSelect={console.log}
-                            placeholder='Saisissez votre adresse'
-                            debounce={1}
-                            inputStyle={{background: "transparent", color: "#ffffff", fontSize: "2.5em", borderRadius: "", 
-                            paddingLeft: "50px", width: "100%"}}
-                        />
-                </div>
+                            <GooglePlacesAutocomplete
+                                autocompletionRequest={{
+                                    componentRestrictions: {
+                                        country: ['fr'],
+                                    }
+                                }}
+                                onSelect={console.log}
+                                placeholder='Saisissez votre adresse'
+                                debounce={1}
+                                inputStyle={{background: "transparent", color: "#ffffff", fontSize: "2.5em", borderRadius: "", 
+                                paddingLeft: "50px", width: "100%"}}
+                            />
+                    </div>
+                </Animated>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
                     <IconButton aria-label="show 17 new notifications" color="inherit">
