@@ -205,22 +205,19 @@ export default function PrimarySearchAppBar(props: toolBarProps) {
                     <div className={classes.searchIcon}>
                         <SearchIcon />
                     </div>
-                    <InputBase
-                        placeholder="Saissisez votre adresse..."
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput
-                        }}
-                        inputProps={{ "aria-label": "search" }}
-                    />
+
                         <GooglePlacesAutocomplete
                             autocompletionRequest={{
                                 componentRestrictions: {
-                                  country: ['fr'],
+                                    country: ['fr'],
                                 }
-                              }}
+                            }}
                             onSelect={console.log}
-                            />
+                            placeholder='Saisissez votre adresse'
+                            debounce={1}
+                            inputStyle={{background: "transparent", color: "#ffffff", fontSize: "2.5em", borderRadius: "", 
+                            paddingLeft: "50px", width: "100%"}}
+                        />
                 </div>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
